@@ -58,9 +58,9 @@ Simply put, distortion correction translates 3d objects in the real world space.
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  The distorition coefficients reflect the radial or tangential distortion relative to the image center for various angled lenses. They will be plugged into the correction formula to translate a real-world coordiate to its respective location on the corrected image plane. I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
-![Radial Distortion Formula][rad_distort_eqn]
+<center>![Radial Distortion Formula][rad_distort_eqn]</center>
 
-![alt text][undistort_warp]
+<center>![alt text][undistort_warp]</center>
 
 ### Pipeline (single images)
 
