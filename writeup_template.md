@@ -1,4 +1,4 @@
-## Writeup Template
+## Final Writeup 
 
 ### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
@@ -33,6 +33,8 @@ The goals / steps of this project are the following:
 [all_combined_thresh]: ./output_images/all_combined_thresh.jpg "After Applying Color and Gradient Thresholds" 
 [all_combined_thresh_warp]: ./output_images/all_combined_thresh.JPG 
 [combined_thresh_warped_hist]: ./output_images/combined_thresh_warped_hist.JPG 
+[individual_threshs]: ./output_images/output_images/individual_threshs.JPG 
+
 
 
 
@@ -45,10 +47,6 @@ The goals / steps of this project are the following:
 ---
 
 ### Writeup / README
-
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
-
-You're reading it!
 
 ### Camera Calibration
 
@@ -83,9 +81,16 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  After a series of trial and errors, I picked only a subset of the thresholds, namely gradient, directional, and a S_channel range from the HLS colorspace to process the image as applying all thresholds had filtered out too few pixels for certain test images. 
+I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  After a series of trial and errors, I picked only a subset of the thresholds, namely gradient, directional, lightness, and saturation range from the HLS colorspace to process the image as applying all thresholds had filtered out too few pixels for certain test images. 
 
-The gradient threshold represents changes in the color intensity. Assuming the lanes generally contrast from the pavement on both sides, it was more advantageous to look at the gradient along the horizontal axis. Directional threshold 
+The gradient threshold represents changes in the color intensity. Assuming the lanes generally contrast from the pavement on both sides, it was more advantageous to look at the gradient along the horizontal axis. Directional threshold. 
+
+Looking at the inidividual binary outputs, one can see the Saturation threshold was the best at isolating the 
+
+<p align="center">
+  <img src="./output_images/output_images/individual_threshs.JPG ">
+</p>
+
 
 Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
@@ -121,10 +126,10 @@ This resulted in the following source and destination points:
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+After applying the various color and gradient thresholds stated above, a histogram was generated along the vertical (axis = 0) of the binary image as this is how you can easily detect peaks where lanes exist. 
 
 <p align="center">
-  <img src=".\output_images/combined_thresh_warped_hist.JPG">
+  <img src=".\output_images/combined_thresh_warped_hist.JPG"> 
 </p>
 
 
