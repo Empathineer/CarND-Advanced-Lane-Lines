@@ -28,9 +28,10 @@ The goals / steps of this project are the following:
 [combined_thresh_warp]: ./output_images/combined_thresh_warped_hist.JPG
 [undistort_warp]: ./output_images/undistorted_warped.JPG
 [rad_distort_eqn]: ./output_images/radial_distort_formula.JPG
-[tan_distort_eqn]: ./examples/tan_distort_formula.jpg "Output"
-[distort]: ./examples/example_output.jpg "Output"
-[image11]: ./examples/example_output.jpg "Output"
+[tan_distort_eqn]: ./output_images/tan_distort_formula.jpg "Output"
+[highlighted_lane]: ./output_images/highlighted_lane.JPG "Output"
+[image7]: ./output_images/all_combined_thresh.JPG "Output"
+[all_combined_thresh_warp]: ./output_images/all_combined_thresh.JPG "Output"
 
 
 [video1]: ./project_video.mp4 "Video"
@@ -86,7 +87,7 @@ The gradient threshold represents changes in the color intensity. Assuming the l
 
 Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
-![alt text][image3]
+![alt text][image7]
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
