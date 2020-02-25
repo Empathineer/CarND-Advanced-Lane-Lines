@@ -34,7 +34,7 @@ The goals / steps of this project are the following:
 [all_combined_thresh_warp]: ./output_images/all_combined_thresh.JPG 
 
 
-[video1]: ./project_video.mp4 "Video"
+[final_output_video]: ./output_images/CurvatureDisplay_output_video_solution.mp4  "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 
@@ -142,7 +142,7 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./output_images/CurvatureDisplay_output_video_solution.mp4 )
 
 ---
 
