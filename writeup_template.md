@@ -55,10 +55,19 @@ The code for this step is contained in the first code cell of the IPython notebo
 
 Simply put, distortion correction translates 3d objects in the real world space. I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
+<p align="center">
+  <img src="./output_images/distortion_correction_checker.JPG">
+</p>
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  The distorition coefficients reflect the radial or tangential distortion relative to the image center for various angled lenses. They will be plugged into the correction formula to translate a real-world coordiate to its respective location on the corrected image plane. I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
-![Radial Distortion Formula][rad_distort_eqn]
+<p align="center">
+  <img src="./output_images/radial_distort_formula.JPG">
+</p>
+
+<p align="center">
+  <img src="./output_images/tan_distort_formula.JPG">
+</p>
 
 ![alt text][undistort_warp]
 
