@@ -29,9 +29,9 @@ The goals / steps of this project are the following:
 [undistort_warp]: ./output_images/undistorted_warped.JPG
 [rad_distort_eqn]: ./output_images/radial_distort_formula.JPG
 [tan_distort_eqn]: ./output_images/tan_distort_formula.jpg "Output"
-[highlighted_lane]: ./output_images/highlighted_lane.JPG "Output"
-[image7]: ./output_images/all_combined_thresh.JPG "Output"
-[all_combined_thresh_warp]: ./output_images/all_combined_thresh.JPG "Output"
+[highlighted_lane]: ./output_images/highlighted_lane.JPG 
+[all_combined_thresh]: ./output_images/all_combined_thresh.jpg "After Applying Color and Gradient Thresholds" 
+[all_combined_thresh_warp]: ./output_images/all_combined_thresh.JPG 
 
 
 [video1]: ./project_video.mp4 "Video"
@@ -87,23 +87,24 @@ The gradient threshold represents changes in the color intensity. Assuming the l
 
 Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
-![alt text][image7]
+![all_combined_thresh][all_combined_thresh]
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code for my perspective transform includes a function called `warp()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+The code for my perspective transform includes a function called `warp()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warp()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I started by eye-balling the the source and destination points based on a plotted test image. 
 
 ```python
-src = np.float32(
-    [[(img_size[0] / 2) - 55, img_size[1] / 2 + 100],
-    [((img_size[0] / 6) - 10), img_size[1]],
-    [(img_size[0] * 5 / 6) + 60, img_size[1]],
-    [(img_size[0] / 2 + 55), img_size[1] / 2 + 100]])
-dst = np.float32(
-    [[(img_size[0] / 4), 0],
-    [(img_size[0] / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), 0]])
+  src_coordinates = np.float32(
+    [[280,  700],  # Bottom left
+     [595,  460],  # Top left
+     [725,  460],  # Top right
+     [1125, 700]]) # Bottom right
+
+    dst_coordinates = np.float32(
+    [[250,  720],  # Bottom left
+     [250,    0],  # Top left
+     [1065,   0],  # Top right
+     [1065, 720]]) # Bottom right  
 ```
 
 This resulted in the following source and destination points:
