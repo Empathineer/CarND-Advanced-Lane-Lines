@@ -134,7 +134,7 @@ I did this in lines # through # in my code in `my_other_file.py`
 
 I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
 
-![alt text][image6]
+![alt text][highlighted_lane]
 
 ---
 
@@ -150,4 +150,10 @@ Here's a [link to my video result](./output_images/CurvatureDisplay_output_video
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+1. There are portions of the code that should be more dynamic. 
+  a. source and destination points: Instead of hard cording the coordinates, 
+  b. 
+  
+2. More efficient lane pixel search could have been implemented: Instead of performing a search and/or transformation on the full scope of the image, a class Line could be implented to store. Each line object may contain crtical parameters such as the left_fitx and right_fitx points. This will allow for a more targeted search in the next frame by only detecting activated pixels +/- a certain margin from the previous set of extrapolated points. 
+
+These obstacles become quite evident when running the challenge video through the pipeline. 
